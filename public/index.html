@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#10264e"><meta name="description" content="Next Shop — temukan produk pilihan dengan pengalaman belanja online yang lebih nyaman.">
+  <title>Next Shop — Temukan yang Kamu Suka</title>
+  <link rel="icon" href="/assets/next-shop-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/app.js" defer></script>
+</head>
+<body>
+  <div class="mobile-scrim" id="mobileScrim"></div>
+  <aside class="sidebar" id="sidebar" aria-label="Navigasi utama">
+    <a class="brand" href="#home" aria-label="Next Shop beranda">
+      <span class="brand-symbol" id="brandSymbol"><img src="/assets/next-shop-mark.svg" alt="" /></span>
+      <span class="brand-text"><strong id="brandName">Next Shop</strong><small>YOUR DAILY DISCOVERY</small></span>
+    </a>
+    <div class="side-label">MENU UTAMA</div>
+    <nav class="side-nav" id="mainNav">
+      <a class="nav-link active" href="#home" data-page="home"><span class="nav-icon" data-icon="home"></span><span>Beranda</span><span class="nav-arrow">↗</span></a>
+      <a class="nav-link" href="#shop" data-page="shop"><span class="nav-icon" data-icon="grid"></span><span>Jelajahi Shop</span><span class="nav-arrow">↗</span></a>
+      <a class="nav-link" href="#cart" data-page="cart"><span class="nav-icon" data-icon="bag"></span><span>Keranjang</span><span class="nav-count" id="sidebarCartCount">0</span></a>
+      <a class="nav-link" href="#orders" data-page="orders"><span class="nav-icon" data-icon="receipt"></span><span>Pesanan Saya</span></a>
+      <a class="nav-link" href="#about" data-page="about"><span class="nav-icon" data-icon="spark"></span><span>Tentang Kami</span></a>
+    </nav>
+    <div class="side-label side-label-spaced">AKUN & TOKO</div>
+    <nav class="side-nav">
+      <button class="nav-link nav-button" type="button" id="accountNav"><span class="nav-icon" data-icon="user"></span><span id="accountNavText">Masuk / Daftar</span><span class="nav-arrow">↗</span></button>
+      <a class="nav-link" href="/admin" id="adminNav"><span class="nav-icon" data-icon="shield"></span><span>Dashboard Admin</span><span class="nav-arrow">↗</span></a>
+    </nav>
+    <div class="sidebar-spacer"></div>
+    <div class="side-promo">
+      <div class="promo-orbit orbit-one"></div><div class="promo-orbit orbit-two"></div>
+      <div class="promo-mini-icon" data-icon="box"></div>
+      <span class="promo-overline">A LITTLE REMINDER</span>
+      <strong>Temukan pilihan yang pas buatmu.</strong>
+      <p>Koleksi pilihan, informasi jelas, belanja lebih nyaman.</p>
+      <a href="#shop">Mulai jelajah <span>↗</span></a>
+    </div>
+    <div class="sidebar-profile" id="sidebarProfile">
+      <span class="profile-avatar" id="profileAvatar">N</span>
+      <span class="profile-label"><strong id="profileName">Hai, teman!</strong><small id="profileSub">Selamat datang di Next Shop</small></span>
+      <button class="icon-btn tiny" type="button" id="profileAction" aria-label="Masuk" title="Masuk"><span data-icon="login"></span></button>
+    </div>
+    <div class="sidebar-foot"><span class="online-dot"></span> Belanja nyaman, kapan saja <span>© <span id="yearSide"></span></span></div>
+  </aside>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="topbar-left">
+        <button class="icon-btn mobile-menu" id="mobileMenu" aria-label="Buka menu" type="button"><span data-icon="menu"></span></button>
+        <div class="breadcrumb"><span>Next Shop</span><i>/</i><strong id="breadcrumbPage">Beranda</strong></div>
+      </div>
+      <div class="topbar-actions">
+        <form class="top-search" id="globalSearchForm" role="search"><span data-icon="search"></span><input type="search" id="globalSearch" placeholder="Cari produk, kategori..." autocomplete="off" aria-label="Cari produk"><kbd>⌕</kbd></form>
+        <button class="icon-btn top-cart-btn" type="button" id="topCartButton" aria-label="Buka keranjang"><span data-icon="bag"></span><b id="topCartCount">0</b></button>
+        <button class="top-account" type="button" id="topAccountButton"><span class="top-avatar" id="topAvatar">N</span><span class="top-account-copy"><strong id="topAccountName">Hai, teman!</strong><small id="topAccountSub">Akun kamu</small></span><span class="chevron" data-icon="chevron-down"></span></button>
+      </div>
+    </header>
+
+    <main id="pageRoot" class="page-root" tabindex="-1">
+      <section class="home-page page-section" id="page-home">
+        <div class="hero-shell">
+          <div class="hero-copy">
+            <div class="hero-eyebrow"><span class="eyebrow-star">✦</span><span id="heroEyebrow">YOUR NEXT FAVORITE THING</span><span class="eyebrow-line"></span></div>
+            <h1 id="heroTitle">Belanja lebih mudah.<br><em>Temukan lebih banyak.</em></h1>
+            <p id="heroText">Jelajahi koleksi pilihan dan temukan produk yang cocok buat kamu.</p>
+            <div class="hero-buttons"><a class="btn btn-white" href="#shop" id="heroCta">Jelajahi koleksi <span data-icon="arrow-up-right"></span></a><a class="hero-text-link" href="#about">Kenali Next Shop <span data-icon="arrow-right"></span></a></div>
+            <div class="hero-meta"><div class="meta-avatar-stack"><span>N</span><span>S</span><span>+</span></div><div><strong>Mulai dari yang kamu butuhkan</strong><small>Informasi transparan. Pengalaman simpel.</small></div></div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art-grid"></div><div class="hero-ring ring-a"></div><div class="hero-ring ring-b"></div>
+            <div class="hero-glass-card glass-back"><span class="glass-dot"></span><span class="glass-label">CURATED FOR YOU</span><div class="glass-squiggle"></div></div>
+            <div class="hero-product-card"><div class="hero-product-top"><span class="hero-tag">NEXT PICK</span><span class="hero-sparkle">✦</span></div><div class="hero-product-art"><div class="art-disc"></div><div class="art-arc"></div><div class="art-cube"><i></i><b></b></div></div><div class="hero-product-bottom"><div><small>YOUR EVERYDAY EDIT</small><strong>Made for<br>your next move.</strong></div><span class="hero-arrow">↗</span></div></div>
+            <div class="floating-chip chip-top"><span class="chip-icon chip-cyan" data-icon="check"></span><span><b>Easy to explore</b><small>Temukan pilihanmu</small></span></div>
+            <div class="floating-chip chip-bottom"><span class="chip-icon chip-orange" data-icon="heart"></span><span><b>Find your favorite</b><small>Mulai dari sini</small></span></div>
+            <div class="art-caption">DISCOVER SOMETHING GOOD <span>✳</span></div>
+          </div>
+          <div class="hero-index"><span>01</span><i></i><span>01</span></div>
+        </div>
+
+        <div class="trust-strip" aria-label="Keunggulan layanan">
+          <div class="trust-item"><span class="trust-icon trust-blue" data-icon="search"></span><div><strong>Jelajah lebih gampang</strong><small>Cari produk tanpa ribet</small></div></div>
+          <div class="trust-divider"></div>
+          <div class="trust-item"><span class="trust-icon trust-violet" data-icon="shield-check"></span><div><strong>Info lebih transparan</strong><small>Harga & stok jelas</small></div></div>
+          <div class="trust-divider"></div>
+          <div class="trust-item"><span class="trust-icon trust-amber" data-icon="message-circle"></span><div><strong>Konfirmasi langsung</strong><small>Terhubung ke admin toko</small></div></div>
+          <div class="trust-divider"></div>
+          <div class="trust-item"><span class="trust-icon trust-teal" data-icon="smartphone"></span><div><strong>Nyaman di HP</strong><small>Desain responsif</small></div></div>
+        </div>
+
+        <section class="home-categories block-section">
+          <div class="section-heading"><div><div class="section-kicker">PILIH SESUAI KEBUTUHAN</div><h2>Jelajah kategori <span>pilihan.</span></h2><p>Mulai dari kategori yang kamu suka.</p></div><a href="#shop" class="view-all">Semua kategori <span data-icon="arrow-up-right"></span></a></div>
+          <div class="category-grid" id="homeCategoryGrid"></div>
+        </section>
+
+        <section class="home-featured block-section">
+          <div class="section-heading"><div><div class="section-kicker">DIKURASI UNTUKMU</div><h2>Produk <span>unggulan.</span></h2><p>Pilihan yang ditandai langsung oleh admin toko.</p></div><a href="#shop" class="view-all">Lihat semua produk <span data-icon="arrow-up-right"></span></a></div>
+          <div class="product-grid" id="featuredGrid"></div>
+        </section>
+
+        <section class="promo-band" id="promoBand" hidden><div class="promo-band-graphic"><div class="promo-band-star">✦</div><div class="promo-band-circle"></div><div class="promo-band-pill">CURATED</div></div><div class="promo-band-copy"><span id="promoLabel">SPECIAL DROP</span><h2 id="promoTitle">Temukan pilihan spesial minggu ini</h2><p id="promoText">Pilihan terbaru menunggumu.</p></div><a href="#shop" class="btn btn-navy">Lihat koleksi <span data-icon="arrow-up-right"></span></a></section>
+        <section class="home-latest block-section"><div class="section-heading"><div><div class="section-kicker">BARU DITAMBAHKAN</div><h2>Yang baru di <span>rak.</span></h2><p>Produk terbaru yang sudah tersedia di toko.</p></div><a href="#shop" class="view-all">Ke katalog <span data-icon="arrow-up-right"></span></a></div><div class="product-grid" id="latestGrid"></div></section>
+        <section class="home-cta"><div class="cta-orb"></div><div class="cta-content"><span class="section-kicker">YOUR NEXT DISCOVERY</span><h2>Sudah tahu yang kamu cari?</h2><p>Telusuri katalog dan temukan produk yang cocok dengan kebutuhanmu.</p><a class="btn btn-white" href="#shop">Mulai belanja <span data-icon="arrow-up-right"></span></a></div><div class="cta-mark">NS<span>✦</span></div></section>
+      </section>
+
+      <section class="shop-page page-section" id="page-shop" hidden>
+        <div class="page-intro shop-intro"><div><div class="section-kicker">THE NEXT EDIT</div><h1>Temukan <span>favoritmu.</span></h1><p>Jelajahi semua produk yang tersedia di Next Shop.</p></div><div class="shop-intro-art"><span class="intro-art-ring"></span><span class="intro-art-orb"></span><span class="intro-art-spark">✦</span></div></div>
+        <div class="shop-toolbar"><div class="shop-search-wrap"><span data-icon="search"></span><input type="search" id="shopSearch" placeholder="Cari nama atau deskripsi produk..." aria-label="Cari katalog"><kbd>⌕</kbd></div><label class="sort-wrap"><span>Urutkan</span><select id="sortSelect"><option value="newest">Terbaru</option><option value="price-low">Harga terendah</option><option value="price-high">Harga tertinggi</option><option value="name">Nama A–Z</option></select></label><button class="filter-toggle" id="clearFilters" type="button"><span data-icon="rotate-ccw"></span> Reset</button></div>
+        <div class="shop-content"><aside class="filter-panel"><div class="filter-head"><strong>Filter produk</strong><span data-icon="sliders"></span></div><div class="filter-group"><div class="filter-title">Kategori <span>⌄</span></div><div class="category-filter-list" id="categoryFilterList"></div></div><div class="filter-group"><div class="filter-title">Ketersediaan</div><label class="check-row"><input type="checkbox" id="inStockOnly"><span class="fake-check"></span><span>Stok tersedia</span></label><label class="check-row"><input type="checkbox" id="featuredOnly"><span class="fake-check"></span><span>Produk unggulan</span></label></div><div class="filter-note"><span data-icon="info"></span><p>Harga dan stok mengikuti data yang dikelola admin toko.</p></div></aside><div class="catalog-area"><div class="catalog-heading"><div><strong id="catalogTitle">Semua produk</strong><span id="catalogCount">Memuat katalog…</span></div><button class="mobile-filter-button" id="mobileFilterButton" type="button"><span data-icon="sliders"></span> Filter</button></div><div class="active-filters" id="activeFilters"></div><div class="product-grid shop-product-grid" id="shopGrid"></div><div class="catalog-bottom" id="catalogBottom"></div></div></div>
+      </section>
+
+      <section class="cart-page page-section" id="page-cart" hidden>
+        <div class="page-intro compact-intro"><div><div class="section-kicker">YOUR BAG</div><h1>Keranjang <span>belanja.</span></h1><p>Periksa pilihanmu sebelum melanjutkan pesanan.</p></div><div class="intro-icon intro-icon-blue" data-icon="bag"></div></div>
+        <div id="cartRoot"></div>
+      </section>
+
+      <section class="orders-page page-section" id="page-orders" hidden>
+        <div class="page-intro compact-intro"><div><div class="section-kicker">ORDER JOURNAL</div><h1>Pesanan <span>kamu.</span></h1><p>Lihat status pesanan atau lacak pesanan sebagai tamu.</p></div><div class="intro-icon intro-icon-violet" data-icon="receipt"></div></div>
+        <div id="ordersRoot"></div>
+      </section>
+
+      <section class="about-page page-section" id="page-about" hidden>
+        <div class="about-hero"><div class="about-hero-copy"><div class="hero-eyebrow"><span class="eyebrow-star">✦</span> THE STORY BEHIND THE SHOP</div><h1 id="aboutTitle">Belanja dengan cara<br><em>yang lebih baik.</em></h1><p id="aboutText">Next Shop hadir untuk membuat pengalaman menemukan dan memesan produk menjadi lebih jelas, nyaman, dan mudah.</p><a class="btn btn-white" href="#shop">Temukan produk <span data-icon="arrow-up-right"></span></a></div><div class="about-art"><div class="about-art-sun"></div><div class="about-art-block block-one"></div><div class="about-art-block block-two"></div><div class="about-art-pill">NEXT<br>CHAPTER</div><span class="about-art-star">✦</span></div></div>
+        <div class="about-values"><article class="value-card"><span class="value-icon value-royal" data-icon="compass"></span><span class="value-caption">OUR VISION</span><h3>Visi kami</h3><p id="aboutVision">Menghadirkan pengalaman belanja online yang sederhana, aman, dan menyenangkan.</p></article><article class="value-card"><span class="value-icon value-cyan" data-icon="layers"></span><span class="value-caption">OUR MISSION</span><h3>Misi kami</h3><p id="aboutMission">Memberikan informasi produk yang jelas, layanan yang responsif, dan proses pemesanan yang transparan.</p></article><article class="value-card"><span class="value-icon value-amber" data-icon="heart-handshake"></span><span class="value-caption">OUR PROMISE</span><h3>Belanja tanpa ribet</h3><p>Kamu bisa menjelajah dan memasukkan produk ke keranjang tanpa perlu membuat akun lebih dulu.</p></article></div>
+        <div class="contact-panel"><div><span class="section-kicker">STAY IN TOUCH</span><h2>Ada yang ingin ditanyakan?</h2><p>Hubungi toko melalui kanal kontak yang tersedia.</p></div><div class="contact-links" id="contactLinks"></div></div>
+        <div class="developer-note" id="developerNote" hidden><span class="developer-note-icon" data-icon="spark"></span><span><small>BUILT WITH CARE</small><strong id="developerName"></strong></span></div>
+        <footer class="about-footer"><span class="footer-brand"><img src="/assets/next-shop-mark.svg" alt=""><strong id="footerStoreName">Next Shop</strong></span><span id="footerAddress">Dibuat untuk pengalaman belanja yang lebih nyaman.</span><span>© <span id="yearFooter"></span> Next Shop</span></footer>
+      </section>
+    </main>
+    <footer class="global-footer"><span>© <span id="yearMain"></span> <strong id="footerName">Next Shop</strong></span><span>Discover good things, one click at a time <b>✦</b></span><a href="#about">Tentang Next Shop <span data-icon="arrow-up-right"></span></a></footer>
+  </div>
+
+  <div class="modal-root" id="modalRoot" aria-live="polite"></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite" aria-atomic="true"></div>
+  <template id="productCardTemplate"><article class="product-card"><div class="product-media"><img alt="" loading="lazy"><div class="product-badges"></div><button class="favorite-btn" type="button" aria-label="Produk unggulan"><span data-icon="heart"></span></button><button class="product-quick-view" type="button">Lihat detail <span>↗</span></button></div><div class="product-card-info"><div class="product-card-meta"><span class="product-category"></span><span class="product-stock"></span></div><h3 class="product-name"></h3><p class="product-description"></p><div class="product-card-bottom"><div><small>HARGA</small><strong class="product-price"></strong></div><button class="add-cart-btn" type="button" aria-label="Tambah ke keranjang"><span data-icon="plus"></span></button></div></div></article></template>
+</body>
+</html>

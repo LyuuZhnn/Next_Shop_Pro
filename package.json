@@ -1,0 +1,14 @@
+{
+  "name": "next-shop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Next Shop full-stack e-commerce starter with protected admin dashboard",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check setup-admin.js && node --check reset-admin.js && node --check public/js/app.js && node --check public/js/admin.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
